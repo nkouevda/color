@@ -1,3 +1,12 @@
+---
+---
+
+{% if jekyll.environment == 'production' %}
+   {% assign relative_prefix = '/' | append: site.repo_name %}
+{% else %}
+   {% assign relative_prefix = '' %}
+{% endif %}
+
 <!doctype html>
 
 <html lang="en">
@@ -7,8 +16,8 @@
 
     <title>Color Split</title>
 
-    <link href="/static/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="/static/css/container.css" rel="stylesheet" type="text/css" />
+    <link href="{{ relative_prefix }}/static/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="{{ relative_prefix }}/static/css/container.css" rel="stylesheet" type="text/css" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17427236-4"></script>
     <script>

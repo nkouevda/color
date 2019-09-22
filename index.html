@@ -17,7 +17,7 @@
     <title>Click or tap anywhere!</title>
 
     <link href="{{ relative_prefix }}/static/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="{{ relative_prefix }}/static/css/container.css" rel="stylesheet" type="text/css" />
+    <link href="{{ relative_prefix }}/static/css/split.css" rel="stylesheet" type="text/css" />
     <link href="{{ relative_prefix }}/static/img/favicon.png" rel="icon" type="image/png" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17427236-4"></script>
@@ -33,32 +33,6 @@
   <body>
     <div id="container"></div>
 
-    <script type="text/javascript">
-      const getRandomColor = function() {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        return `rgb(${r}, ${g}, ${b})`;
-      };
-
-      const addSplitListener = function(target) {
-        const listener = function() {
-          appendSplittableChild(target);
-          appendSplittableChild(target);
-          target.removeEventListener('click', listener);
-        };
-        target.addEventListener('click', listener);
-      };
-
-      const appendSplittableChild = function(target) {
-        const child = document.createElement('div');
-        child.style.backgroundColor = getRandomColor();
-        addSplitListener(child);
-        target.appendChild(child);
-      };
-
-      const container = document.getElementById('container');
-      appendSplittableChild(container);
-    </script>
+    <script src="{{ relative_prefix }}/static/js/split.js"></script>
   </body>
 </html>

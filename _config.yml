@@ -1,1 +1,2 @@
 repo_name: color-split
+exclude: [README.md]

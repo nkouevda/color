@@ -1,11 +1,4 @@
----
----
-
-{% if jekyll.environment == 'production' %}
-   {% assign relative_prefix = '/' | append: site.repo_name %}
-{% else %}
-   {% assign relative_prefix = '' %}
-{% endif %}
+{% include relative_prefix.html %}
 
 <!doctype html>
 
@@ -14,11 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>Click or tap anywhere!</title>
+    <title>{{ page.title }}</title>
 
     <link href="{{ relative_prefix }}/static/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="{{ relative_prefix }}/static/css/split.css" rel="stylesheet" type="text/css" />
     <link href="{{ relative_prefix }}/static/img/favicon.png" rel="icon" type="image/png" />
+    <script src="{{ relative_prefix }}/static/js/color.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-17427236-4"></script>
     <script>
@@ -31,8 +24,6 @@
     </script>
   </head>
   <body>
-    <div id="container"></div>
-
-    <script src="{{ relative_prefix }}/static/js/split.js"></script>
+    {{ content }}
   </body>
 </html>

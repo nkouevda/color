@@ -1,0 +1,5 @@
+{% if jekyll.environment == 'production' %}
+   {% assign relative_prefix = '/' | append: site.repo_name %}
+{% else %}
+   {% assign relative_prefix = '' %}
+{% endif %}

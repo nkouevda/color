@@ -1,8 +1,8 @@
 const container = document.getElementById('container');
 
 const size = 12;
-const numRows = window.innerHeight / size;
-const numColumns = window.innerWidth / size;
+const numRows = Math.round(window.innerHeight / size);
+const numColumns = Math.round(window.innerWidth / size);
 
 for (let i = 0; i < numRows; ++i) {
   const row = document.createElement('div');

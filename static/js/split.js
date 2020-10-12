@@ -1,3 +1,9 @@
+const container = document.getElementById('container');
+
+const params = new URLSearchParams(window.location.search);
+
+const getRandomColor = params.get('space') === 'hsl' ? getRandomHsl : getRandomRgb;
+
 const addSplitListener = function(target) {
   const listener = function() {
     appendSplittableChild(target);
@@ -14,5 +20,4 @@ const appendSplittableChild = function(target) {
   target.appendChild(child);
 };
 
-const container = document.getElementById('container');
 appendSplittableChild(container);

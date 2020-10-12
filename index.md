@@ -7,4 +7,5 @@ title: Color
 
 - [Fill (rgb)]({{ relative_prefix }}/fill/)
 - [Fill (hsl)]({{ relative_prefix }}/fill/?space=hsl)
-- [Split]({{ relative_prefix }}/split/)
+- [Split (rgb)]({{ relative_prefix }}/split/)
+- [Split (hsl)]({{ relative_prefix }}/split/?space=hsl)

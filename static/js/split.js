@@ -4,8 +4,8 @@ const params = new URLSearchParams(window.location.search);
 
 const getRandomColor = params.get('space') === 'hsl' ? getRandomHsl : getRandomRgb;
 
-const addSplitListener = function(target) {
-  const listener = function() {
+const addSplitListener = target => {
+  const listener = () => {
     appendSplittableChild(target);
     appendSplittableChild(target);
     target.removeEventListener('click', listener);
@@ -13,7 +13,7 @@ const addSplitListener = function(target) {
   target.addEventListener('click', listener);
 };
 
-const appendSplittableChild = function(target) {
+const appendSplittableChild = target => {
   const child = document.createElement('div');
   child.style.backgroundColor = getRandomColor();
   addSplitListener(child);

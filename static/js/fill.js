@@ -1,8 +1,12 @@
 const container = document.getElementById('container');
 
-const size = 12;
+const params = new URLSearchParams(window.location.search);
+
+const size = parseInt(params.get('size') || "24");
 const numRows = Math.round(window.innerHeight / size);
 const numColumns = Math.round(window.innerWidth / size);
+
+const getRandomColor = params.get('space') === 'hsl' ? getRandomHsl : getRandomRgb;
 
 for (let i = 0; i < numRows; ++i) {
   const row = document.createElement('div');
